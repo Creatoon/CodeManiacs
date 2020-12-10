@@ -17,7 +17,7 @@ var enforceAuthentication = require('./controls/auth').enforceAuthentication;
 var lang = require("./config/lang")
 
 mongoose.Promise = global.Promise;
-mongoose.connect(configDb.database, { useNewUrlParser: true });
+mongoose.connect(configDb.database, { useNewUrlParser: true , useUnifiedTopology: true });
 var db = mongoose.connection;
 
 db.once("open", () => {
